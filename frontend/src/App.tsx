@@ -1,16 +1,14 @@
 import { Header } from '@/components/Header/Header';
-import { HeroSection } from '@/components/HeroSection/HeroSection';
-import { VacancyList } from '@/components/VacancyList/VacancyList';
-import { Footer } from './components/Footer/Footer';
+import { Footer } from '@/components/Footer/Footer';
 
-import './App.css';
+import './App.styled';
+import { HomePage } from './pages/HomePage/HomePage';
 
 function App() {
   return (
     <>
       <Header />
-      <HeroSection />
-      <VacancyList />
+      <HomePage />
       <Footer />
     </>
   );
