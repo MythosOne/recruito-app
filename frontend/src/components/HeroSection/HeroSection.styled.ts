@@ -8,7 +8,7 @@ import bgTablet2x from '@/assets/background/img_1@2x_md_768.jpg';
 import bgDesktop1x from '@/assets/background/img_1@1x_lg_1024.jpg';
 import bgDesktop2x from '@/assets/background/img_1@2x_lg_1024.jpg';
 
-const { breakpoints } = theme;
+const { breakpoints, shadows } = theme;
 
 export const Section = styled.section`
   display: flex;
@@ -78,8 +78,9 @@ export const Text = styled.p`
 
 export const NavContainer = styled.nav``;
 
-export const NavItem = styled.div`
-  position: relative;
+export const NavItem = styled.div``;
+
+export const NavLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,10 +88,20 @@ export const NavItem = styled.div`
   height: 34px;
   border-radius: 80px;
   background-color: #f4e041;
-`;
 
-export const NavLink = styled.a`
-  display: block;
-  width: 100%;
-  text-align: center;
+  transition:
+    transform 250ms,
+    background-color 250ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.05);
+    background-color: #f5cc66;
+    box-shadow: ${shadows.hoverShadow};
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 `;

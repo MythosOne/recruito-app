@@ -8,24 +8,26 @@ import { Section, SectionTitle, ListVacancy } from './VacancyList.styled';
 const ITEMS_PER_PAGE = 6;
 
 type VacancyListProps = {
-
   vacancies: Vacancy[];
 };
 
 export const VacancyList: React.FC<VacancyListProps> = ({ vacancies }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const handlePageChange = (_ : unknown, page: number) => {
+  const handlePageChange = (_: unknown, page: number) => {
     setCurrentPage(page);
   };
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const selectedVacancies = vacancies.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const selectedVacancies = vacancies.slice(
+    startIndex,
+    startIndex + ITEMS_PER_PAGE,
+  );
 
   return (
     <Section>
       <SectionTitle>Open Vacancies</SectionTitle>
-      <ListVacancy>
+      <ListVacancy key={currentPage}>
         {selectedVacancies.map((vacancie) => (
           <VacancyCard key={vacancie.id} vacancie={vacancie} />
         ))}
