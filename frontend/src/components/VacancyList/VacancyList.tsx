@@ -29,7 +29,7 @@ export const VacancyList: React.FC<VacancyListProps> = ({ vacancies }) => {
       <SectionTitle>Open Vacancies</SectionTitle>
       <ListVacancy key={currentPage}>
         {selectedVacancies.map((vacancie) => (
-          <VacancyCard key={vacancie.id} vacancie={vacancie} />
+          <VacancyCard key={vacancie.id} vacancy={vacancie} />
         ))}
       </ListVacancy>
       <Pagination

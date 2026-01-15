@@ -11,11 +11,11 @@ import {
 import { Tooltip } from '@mui/material';
 
 type VacancyCardProps = {
-  vacancie: Vacancy;
+  vacancy: Vacancy;
 };
 
-export const VacancyCard: React.FC<VacancyCardProps> = ({ vacancie }) => {
-  const { title, location, employmentType, description, tags } = vacancie;
+export const VacancyCard: React.FC<VacancyCardProps> = ({ vacancy }) => {
+  const { title, location, employmentType, description, tags } = vacancy;
   return (
     <Card>
       <Title>{title}</Title>
@@ -23,7 +23,7 @@ export const VacancyCard: React.FC<VacancyCardProps> = ({ vacancie }) => {
         {location} • {employmentType}
       </Location>
       <Tooltip title={description}>
-        <Description>{description}</Description>
+        <Description >{description}</Description>
       </Tooltip>
       <Tags>
         {tags.map((tag) => (

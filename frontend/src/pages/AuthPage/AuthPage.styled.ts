@@ -1,3 +1,9 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-export const AuthPageContainer = styled.div``;
+export const AuthPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+`;
