@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { theme } from '@/theme/theme';
 
-const { shadows } = theme;
+const { shadows, colors } = theme;
 
 export const NavContainer = styled.nav``;
 
@@ -20,7 +20,7 @@ export const NavLink = styled.a`
   width: 100px;
   height: 34px;
   border-radius: 80px;
-  background-color: #f4e041;
+  background-color: ${colors.primary};
 
   transition:
     transform 250ms,
@@ -30,7 +30,7 @@ export const NavLink = styled.a`
   &:hover,
   &:focus-visible {
     transform: scale(1.05);
-    background-color: #f5cc66;
+    background-color: ${colors.secondary};
     box-shadow: ${shadows.hoverShadow};
   }
 

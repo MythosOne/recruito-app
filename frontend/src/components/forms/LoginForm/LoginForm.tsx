@@ -2,6 +2,8 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Input } from '@/components/forms/ui/Input/Input';
 
+import { LoginFormContainer, HeadForm, SubmitButton } from './LoginForm.styled';
+
 export const LoginForm = () => {
   const formik = useFormik ({
     initialValues: {
@@ -22,8 +24,8 @@ export const LoginForm = () => {
   });
   
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <h2>Login</h2>
+    <LoginFormContainer onSubmit={formik.handleSubmit}>
+      <HeadForm>Login</HeadForm>
       <Input
         id="email"
         name="email"
@@ -48,7 +50,7 @@ export const LoginForm = () => {
         error={formik.errors.password}
         touched={formik.touched.password}
       />
-      <button type="submit">Login</button>
-    </form>
+      <SubmitButton type="submit" disabled={!formik.isValid || formik.isSubmitting}>Login</SubmitButton>
+    </LoginFormContainer>
   );
 };

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { theme } from '@/theme/theme';
 
-const { /*breakpoints,*/ shadows } = theme;
+const { breakpoints, shadows } = theme;
 
 export const Card = styled.li`
   display: flex;
@@ -11,6 +11,7 @@ export const Card = styled.li`
   gap: 6px;
   padding: 5px;
 
+  width: 328px;
   height: 150px;
 
   border: 1px solid #a2a2a2;
@@ -27,6 +28,16 @@ export const Card = styled.li`
     border: 2px solid #f5cc66;
     box-shadow: ${shadows.hoverShadow};
   }
+
+  @media screen and (${breakpoints.tablet}) {
+    width: 480px;
+    height: 150px;
+  }
+
+  @media screen and (${breakpoints.desktop}) {
+    width: 680px;
+    height: 150px;
+  } 
 `;
 
 export const Title = styled.h3`

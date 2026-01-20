@@ -18,7 +18,7 @@ export const HeroSection = () => {
         </Text>
         <NavContainer>
           <NavItem>
-            <NavLink href="#signUpSection">Sign Up</NavLink>
+            <NavLink href="#signUpSection">Get Started</NavLink>
           </NavItem>
         </NavContainer>
       </Container>

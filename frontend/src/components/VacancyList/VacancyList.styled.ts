@@ -12,16 +12,16 @@ const fadeIn = keyframes`
   }
 `;
 
-const fadeOut = keyframes`
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-`;
+// const fadeOut = keyframes`
+//   from {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+//   to {
+//     opacity: 0;
+//     transform: translateY(-8px);
+//   }
+// `;
 
 export const Section = styled.section`
   display: flex;

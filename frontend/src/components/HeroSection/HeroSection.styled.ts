@@ -56,8 +56,13 @@ export const Container = styled.div`
   width: 328px;
   height: 389px;
 
-  @media screen and (min-width: ${breakpoints.tablet}) {
+  @media screen and (${breakpoints.tablet}) {
     width: 380px;
+    height: 323px;
+  }
+
+  @media screen and (${breakpoints.desktop}) {
+    width: 480px;
     height: 323px;
   }
 `;
@@ -84,7 +89,7 @@ export const NavLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 120px;
   height: 34px;
   border-radius: 80px;
   background-color: #f4e041;
