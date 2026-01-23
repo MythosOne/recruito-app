@@ -28,7 +28,7 @@ export const Section = styled.section`
     background-image: url(${bgMobile2x});
   }
 
-  @media screen and (min-width: ${breakpoints.tablet}) and (max-width: ${breakpoints.desktop}) {
+  @media screen(${breakpoints.tablet}) {
     background-image: url(${bgTablet1x});
 
     @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -37,13 +37,14 @@ export const Section = styled.section`
     height: 600px;
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
+  @media screen and (${breakpoints.desktop}) {
     background-image: url(${bgDesktop1x});
 
     @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
       background-image: url(${bgDesktop2x});
     }
-    height: 650px;
+    width: 1280px;
+    height: 600px;
   }
 `;
 

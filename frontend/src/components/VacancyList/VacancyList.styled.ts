@@ -21,7 +21,7 @@ const fadeIn = keyframes`
 //     opacity: 0;
 //     transform: translateY(-8px);
 //   }
-// `;
+//`;
 
 export const Section = styled.section`
   display: flex;
@@ -36,7 +36,8 @@ export const SectionTitle = styled.h2`
 export const ListVacancy = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 20px;
 
   animation: ${fadeIn} 500ms ease forwards;
 `;

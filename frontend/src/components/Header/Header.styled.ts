@@ -23,9 +23,9 @@ export const Section = styled.header`
 
   /* @media screen and (${breakpoints.tablet}) {
     width: 768px;
-  }
+  } */
 
   @media screen and (${breakpoints.desktop}) {
   width: 1280px;
-  } */
+  }
 `;

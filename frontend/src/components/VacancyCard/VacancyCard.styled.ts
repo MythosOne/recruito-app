@@ -11,7 +11,7 @@ export const Card = styled.li`
   gap: 6px;
   padding: 5px;
 
-  width: 328px;
+  width: clamp(280px, 90vw, 880px);
   height: 150px;
 
   border: 1px solid #a2a2a2;
@@ -29,15 +29,15 @@ export const Card = styled.li`
     box-shadow: ${shadows.hoverShadow};
   }
 
-  @media screen and (${breakpoints.tablet}) {
-    width: 480px;
+  /* @media screen and (${breakpoints.tablet}) {
+    width: 680px;
     height: 150px;
   }
 
   @media screen and (${breakpoints.desktop}) {
-    width: 680px;
+    width: 880px;
     height: 150px;
-  } 
+  }  */
 `;
 
 export const Title = styled.h3`
