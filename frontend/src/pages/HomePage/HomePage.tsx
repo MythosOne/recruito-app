@@ -4,7 +4,6 @@ import { vacancies } from '@/data/data';
 
 import { HomePageContainer } from './HomePage.styled';
 
-
 export const HomePage = () => {
   return (
     <HomePageContainer>

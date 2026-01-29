@@ -3,7 +3,7 @@ export const theme = Object.freeze({
     primary: '#f4e041',
     secondary: '#f5cc66',
     white: '#fff',
-    lightGray: '#f9f9f9',
+    lightGray: '#d0cfcf',
     gray: '#a2a2a2',
     // darkGray: '#7E7E7E',
     black: '#000',
