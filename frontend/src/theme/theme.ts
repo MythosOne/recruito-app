@@ -29,9 +29,9 @@ export const theme = Object.freeze({
   },
 
   breakpoints: {
-    mobile: '(min-width: 360px)',
-    tablet: '(min-width: 768px)',
-    desktop: '(min-width: 1280px)',
+    mobile: '360px',
+    tablet: '768px',
+    desktop: '1280px',
   },
 
     shadows: {

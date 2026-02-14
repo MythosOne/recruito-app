@@ -9,7 +9,7 @@ export const RegisterFormContainer = styled.form`
   width: 300px;
   margin: 0 auto;
   padding: 16px;
-  border: 1px solid #f5cc66;
+  border: 2px solid #f5cc66;
   border-radius: 16px;
   background-color: #f9f9f9;
 

@@ -3,23 +3,24 @@ import { theme } from '@/theme/theme';
 
 const { shadows, colors } = theme;
 
-export const NavContainer = styled.nav``;
+export const ActionContainer = styled.div``;
 
-export const NavList = styled.ul`
+export const ActionList = styled.ul`
   display: flex;
   flex-direction: row;
   gap: 10px;
   list-style: none;
 `;
-export const NavItem = styled.li``;
+export const ActionItem = styled.li``;
 
-export const NavLink = styled.a`
+export const ActionButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100px;
   height: 34px;
   border-radius: 80px;
+  border: none;
   background-color: ${colors.primary};
 
   transition:

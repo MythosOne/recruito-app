@@ -28,7 +28,7 @@ export const Section = styled.section`
     background-image: url(${bgMobile2x});
   }
 
-  @media screen(${breakpoints.tablet}) {
+  @media screen and (min-width: ${breakpoints.tablet}) and (max-width: ${breakpoints.desktop}) {
     background-image: url(${bgTablet1x});
 
     @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -37,7 +37,7 @@ export const Section = styled.section`
     height: 600px;
   }
 
-  @media screen and (${breakpoints.desktop}) {
+  @media screen and (min-width: ${breakpoints.desktop}) {
     background-image: url(${bgDesktop1x});
 
     @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -82,11 +82,11 @@ export const Text = styled.p`
   color: #fff;
 `;
 
-export const NavContainer = styled.nav``;
+export const ActionContainer = styled.div``;
 
-export const NavItem = styled.div``;
+export const ActionItem = styled.div``;
 
-export const NavLink = styled.a`
+export const ActionButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;

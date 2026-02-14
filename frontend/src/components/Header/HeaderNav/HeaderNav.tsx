@@ -1,16 +1,21 @@
-import { NavContainer, NavItem, NavList, NavLink } from './HeaderNav.styled';
+import { ActionContainer, ActionItem, ActionList, ActionButton } from './HeaderNav.styled';
 
-export const HeaderNav = () => {
+type HeaderNavProps = {
+  onLogin: () => void;
+  onRegister: () => void;
+};
+
+export const HeaderNav: React.FC<HeaderNavProps> = ({ onLogin, onRegister }) => {
   return (
-    <NavContainer>
-      <NavList>
-        <NavItem>
-          <NavLink href="#usersSection">Sign in</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="#signUpSection">Sign up</NavLink>
-        </NavItem>
-      </NavList>
-    </NavContainer>
+    <ActionContainer>
+      <ActionList>
+        <ActionItem>
+          <ActionButton onClick={onLogin}>Sign in</ActionButton>
+        </ActionItem>
+        <ActionItem>
+          <ActionButton onClick={onRegister}>Sign up</ActionButton>
+        </ActionItem>
+      </ActionList>
+    </ActionContainer>
   );
 };

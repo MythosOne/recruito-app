@@ -3,24 +3,33 @@ import {
   Container,
   Title,
   Text,
-  NavContainer,
-  NavItem,
-  NavLink,
+  ActionContainer,
+  ActionItem,
+  ActionButton,
 } from './HeroSection.styled';
-export const HeroSection = () => {
 
+type HeroSectionProps = {
+  onLogin: () => void;
+};
+
+export const HeroSection: React.FC<HeroSectionProps> = ({ onLogin }) => {
   return (
     <Section id="heroSection">
       <Container>
-        <Title>Join Recruito and discover new opportunities for growth and success!</Title>
+        <Title>
+          Join Recruito and discover new opportunities for growth and success!
+        </Title>
         <Text>
-          Recruito helps companies find top talent quickly and efficiently, while connecting candidates with opportunities that perfectly match their skills and interests. We create intuitive and accessible interfaces focused on a seamless user experience.
+          Recruito helps companies find top talent quickly and efficiently,
+          while connecting candidates with opportunities that perfectly match
+          their skills and interests. We create intuitive and accessible
+          interfaces focused on a seamless user experience.
         </Text>
-        <NavContainer>
-          <NavItem>
-            <NavLink href="#signUpSection">Get Started</NavLink>
-          </NavItem>
-        </NavContainer>
+        <ActionContainer>
+          <ActionItem>
+            <ActionButton onClick={onLogin}>Get Started</ActionButton>
+          </ActionItem>
+        </ActionContainer>
       </Container>
     </Section>
   );
