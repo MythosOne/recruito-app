@@ -7,19 +7,19 @@ import { PostRadioGroup } from './PostRadioGroup/PostRadioGroup';
 import { PhotoUpload } from './PhotoUpload/PhotoUpload';
 import { SubmitButton } from '@/components/forms/ui/Button/SubmitButton';
 
-import { FormContainer } from './UserForm.styled';
+import { FormContainer } from './EditProfileForm.styled';
 
 type UserFormProps = {
-  onAddUser: (user: User) => void;
+  onEdit: (user: User) => void;
 };
-export const UserForm: React.FC<UserFormProps> = ({ onAddUser }) => {
+export const EditProfileForm: React.FC<UserFormProps> = ({ onEdit }) => {
   const [userInfo, setUserInfo] = useState({ name: '', email: '', phone: '' });
   const [position, setPosition] = useState('');
   const [photo, setPhoto] = useState<File | null>(null);
   const [resetKey, setResetKey] = useState(0);
   const [isSubmitButton, setIsSubmitButton] = useState(true);
 
-  // console.log('userInfo in UserForm', userInfo);
+  // console.log('userInfo in EditProfileForm', userInfo);
   // console.log(' Position:', position);
   // console.log(' Photo:', photo);
 
@@ -43,7 +43,7 @@ export const UserForm: React.FC<UserFormProps> = ({ onAddUser }) => {
       const newUser: User = { id: nanoid(), ...userInfo, position, photo };
       setIsSubmitButton(true);
       console.log('Form submitted:', newUser);
-      onAddUser(newUser);
+      onEdit(newUser);
     } else {
       console.log('Not all forms are filled correctly');
       setIsSubmitButton(true);

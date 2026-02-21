@@ -93,6 +93,7 @@ export const ActionButton = styled.button`
   width: 120px;
   height: 34px;
   border-radius: 80px;
+  border: none;
   background-color: #f4e041;
 
   transition:
