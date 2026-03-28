@@ -2,6 +2,7 @@ export const vacancies = [
   {
     id: '1',
     title: 'UX Designer',
+    company: 'Tech Solutions Inc.',
     location: 'New York, NY',
     employmentType: 'Full time',
     description:
@@ -12,6 +13,7 @@ export const vacancies = [
   {
     id: '2',
     title: 'Marketing Specialist',
+    company: 'Creative Agency LLC',
     location: 'San Francisco, CA',
     employmentType: 'Full time',
     description:
@@ -22,6 +24,7 @@ export const vacancies = [
   {
     id: '3',
     title: 'Front-End Developer',
+    company: 'Innovatech Corp.',
     location: 'Denver, CO',
     employmentType: 'Full time',
     description:
@@ -32,6 +35,7 @@ export const vacancies = [
   {
     id: '4',
     title: 'Back-End Developer (Node.js)',
+    company: 'Cloud Services Ltd.',
     location: 'Remote',
     employmentType: 'Full time',
     description:
@@ -42,6 +46,7 @@ export const vacancies = [
   {
     id: '5',
     title: 'Project Manager',
+    company: 'Enterprise Solutions Inc.',
     location: 'Chicago, IL',
     employmentType: 'Full time',
     description:
@@ -52,6 +57,7 @@ export const vacancies = [
   {
     id: '6',
     title: 'QA Engineer',
+    company: 'Quality First LLC',
     location: 'Austin, TX',
     employmentType: 'Full time',
     description:
@@ -62,6 +68,7 @@ export const vacancies = [
   {
     id: '7',
     title: 'DevOps Engineer',
+    company: 'Cloud Services Ltd.',
     location: 'Seattle, WA',
     employmentType: 'Full time',
     description:
@@ -72,6 +79,7 @@ export const vacancies = [
   {
     id: '8',
     title: 'HR Specialist',
+    company: 'People First Inc.',
     location: 'Boston, MA',
     employmentType: 'Part time',
     description:
@@ -82,6 +90,7 @@ export const vacancies = [
   {
     id: '9',
     title: 'Product Designer',
+    company: 'Design Studio Co.',
     location: 'Remote',
     employmentType: 'Full time',
     description:
@@ -92,6 +101,7 @@ export const vacancies = [
   {
     id: '10',
     title: 'Data Analyst',
+    company: 'Data Insights Ltd.',
     location: 'Los Angeles, CA',
     employmentType: 'Full time',
     description:

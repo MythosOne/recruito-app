@@ -18,9 +18,9 @@ type ProfileCardProps = {
 };
 
 export const CandidateProfileCard: React.FC<ProfileCardProps> = ({
-  name,
-  email,
-  phone,
+  name = "Name not provided",
+  email = "Email not provided",
+  phone = "Phone not provided",
   avatarUrl,
   onEdit,
 }) => {

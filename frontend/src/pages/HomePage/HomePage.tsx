@@ -1,7 +1,7 @@
 import { HeroSection } from '@/components/HeroSection/HeroSection';
 import { VacancyList } from '@/components/VacancyList/VacancyList';
 import { CandidateProfilePage } from '../CandidateProfilePage/CandidateProfilePage';
-import { vacancies } from '@/data/data';
+import { vacancies } from '@/data/dataVacancies';
 
 import { HomePageContainer } from './HomePage.styled';
 

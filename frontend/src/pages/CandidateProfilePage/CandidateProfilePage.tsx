@@ -1,20 +1,34 @@
 import { useState } from 'react';
 import { CandidateProfileCard } from '@/components/CandidateProfileCard/CandidateProfileCard';
 import { EditProfileForm } from '@/components/forms/ProfileForm/EditProfileForm';
-import { AvailableJobsList } from '@/components/AvailableJobsList/AvailableJobsList';
+import { VacancyList } from '@/components/VacancyList/VacancyList';
 import { ApplicationStatusList } from '@/components/ApplicationStatusList/ApplicationStatusList';
 
-import { ProfilePageContainer } from './CandidateProfilePage.styled';
+import {
+  ProfilePageContainer,
+  ProfileCardArea,
+  AvailableJobsArea,
+  ApplicationStatusArea,
+} from './CandidateProfilePage.styled';
+
+import { vacancies } from '@/data/dataVacancies';
+import { applicationStatus } from '@/data/dataApplicationStatus';
 
 export const CandidateProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   return (
     <ProfilePageContainer>
-      <CandidateProfileCard onEdit={() => setIsEditing(true)} />
-      {isEditing && <EditProfileForm />}
-      <AvailableJobsList />
-      <ApplicationStatusList />
+      <ProfileCardArea>
+        <CandidateProfileCard onEdit={() => setIsEditing(true)} />
+        {isEditing && <EditProfileForm />}
+      </ProfileCardArea>
+      <AvailableJobsArea>
+        <VacancyList vacancies={vacancies} variant="profile" />
+      </AvailableJobsArea>
+      <ApplicationStatusArea>
+        <ApplicationStatusList applicationStatus={applicationStatus}/>
+      </ApplicationStatusArea>
     </ProfilePageContainer>
   );
 };

@@ -33,7 +33,7 @@ export const SectionTitle = styled.h2`
   margin-bottom: 24px;
 `;
 
-export const ListVacancy = styled.ul`
+export const ListVacancy = styled.ul<{ variant?: 'main' | 'profile' }>`
   display: flex;
   flex-direction: column;
   align-items: center;

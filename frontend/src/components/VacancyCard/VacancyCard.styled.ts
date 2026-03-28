@@ -3,7 +3,7 @@ import { theme } from '@/theme/theme';
 
 const { breakpoints, shadows } = theme;
 
-export const Card = styled.li`
+export const Card = styled.li<{ variant?: "main" | "profile" }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,8 +40,15 @@ export const Card = styled.li`
   }  */
 `;
 
+export const Logo = styled.img``;
+
 export const Title = styled.h3`
   font-size: 24px;
+  margin: 0;
+`;
+
+export const Company = styled.p`
+  font-size: 18px;
   margin: 0;
 `;
 
@@ -63,3 +70,17 @@ export const Tags = styled.div`
 `;
 
 export const Tag = styled.span``;
+
+export const RespondedButton = styled.button`
+  padding: 6px 12px;
+  background-color: #f5cc66;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+
+  &:hover {
+    background-color: #e0b35c;
+  }
+`;
