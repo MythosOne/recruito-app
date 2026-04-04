@@ -11,7 +11,7 @@ export const Section = styled.header`
   left: 0;
   top: 0;
 
-  /* width: 100%; */
+  width: 1240px;
   height: 60px;
   display: flex;
   justify-content: space-between;

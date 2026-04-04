@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
+import { theme } from '@/theme/theme';
+
+const { breakpoints, shadows } = theme;
 
 const fadeIn = keyframes`
   from {
@@ -21,32 +24,54 @@ const fadeIn = keyframes`
 //     opacity: 0;
 //     transform: translateY(-8px);
 //   }
-//`;
+// `;
 
-export const Section = styled.section`
+export const VacancySection = styled.section`
+  grid-area: vacancy-list;
+  /* overflow: auto; */
+  height: 440px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  border: 2px solid #f5cc66;
+  border-radius: 8px;
+  box-shadow: ${shadows.hoverShadow};
 `;
 
-export const SectionTitle = styled.h2`
-  margin-bottom: 24px;
+export const VacancySectionHeader = styled.div`
+  width: 100%;
+  border-bottom: 2px solid #f5cc66;
+  background-color: #f4e041;
 `;
 
-export const ListVacancy = styled.ul<{ variant?: 'main' | 'profile' }>`
+export const VacancySectionTitle = styled.h2`
+  /* border-bottom: 2px solid #f5cc66;
+  background-color: #f4e041; */
+  margin: 0;
+  padding: 8px;
+`;
+
+export const VacancyListContainer = styled.ul<{ variant?: 'main' | 'profile' }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 
+  height: ${({ variant }) => (variant === 'profile' ? '350px' : 'auto')};
+  overflow: scroll;
+
   animation: ${fadeIn} 500ms ease forwards;
 `;
 
-  // export const ListVacancy = styled.ul<{ $isExiting: boolean }>`
-  // display: flex;
-  // flex-direction: column;
-  // gap: 10px;
+export const VacancyListItem = styled.li``;
 
-  // animation: ${({ $isExiting }) =>
-  //   $isExiting ? fadeOut : fadeIn}
-  //   500ms ease forwards;
+// export const ListVacancy = styled.ul<{ $isExiting: boolean }>`
+// display: flex;
+// flex-direction: column;
+// gap: 10px;
+
+// animation: ${({ $isExiting }) =>
+//   $isExiting ? fadeOut : fadeIn}
+//   500ms ease forwards;

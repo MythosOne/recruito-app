@@ -3,7 +3,13 @@ import { VacancyCard } from '@/components/VacancyCard/VacancyCard';
 import type { Vacancy } from '@/types/Vacancy';
 import Pagination from '@mui/material/Pagination';
 
-import { Section, SectionTitle, ListVacancy } from './VacancyList.styled';
+import {
+  VacancySection,
+  VacancySectionHeader,
+  VacancySectionTitle,
+  VacancyListContainer,
+  VacancyListItem,
+} from './VacancyList.styled';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -23,19 +29,27 @@ export const VacancyList: React.FC<VacancyListProps> = ({
   };
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const selectedVacancies = variant === "main" ? vacancies.slice(
-    startIndex,
-    startIndex + ITEMS_PER_PAGE,
-  ) : vacancies;
+  const selectedVacancies =
+    variant === 'main'
+      ? vacancies.slice(startIndex, startIndex + ITEMS_PER_PAGE)
+      : vacancies;
 
   return (
-    <Section>
-      <SectionTitle>Open Vacancies</SectionTitle>
-      <ListVacancy key={currentPage} variant={variant}>
+    <VacancySection>
+      <VacancySectionHeader>
+        <VacancySectionTitle>Open Vacancies</VacancySectionTitle>
+      </VacancySectionHeader>
+      <VacancyListContainer key={currentPage} variant={variant}>
         {selectedVacancies.map((vacancie) => (
-          <VacancyCard key={vacancie.id} vacancy={vacancie} variant={variant} />
+          <VacancyListItem key={vacancie.id}>
+            <VacancyCard
+              key={vacancie.id}
+              vacancy={vacancie}
+              variant={variant}
+            />
+          </VacancyListItem>
         ))}
-      </ListVacancy>
+      </VacancyListContainer>
       {variant === 'main' && (
         <Pagination
           count={Math.ceil(vacancies.length / ITEMS_PER_PAGE)}
@@ -53,6 +67,6 @@ export const VacancyList: React.FC<VacancyListProps> = ({
           }}
         />
       )}
-    </Section>
+    </VacancySection>
   );
 };

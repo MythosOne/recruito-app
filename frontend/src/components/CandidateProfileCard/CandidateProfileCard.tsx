@@ -1,7 +1,7 @@
 import { Avatar } from '@mui/material';
 import {
-  CardContainer,
-  ProfileTitle,
+  CandidateProfileSection,
+  SectionTitle,
   ProfileInfo,
   Name,
   Email,
@@ -18,23 +18,23 @@ type ProfileCardProps = {
 };
 
 export const CandidateProfileCard: React.FC<ProfileCardProps> = ({
-  name = "Name not provided",
-  email = "Email not provided",
-  phone = "Phone not provided",
+  name = 'Name not provided',
+  email = 'Email not provided',
+  phone = 'Phone not provided',
   avatarUrl,
   onEdit,
 }) => {
-
   return (
-    <CardContainer>
-      <ProfileTitle>Profile Information</ProfileTitle>
+    <CandidateProfileSection>
+      <SectionTitle>Profile Information</SectionTitle>
+      {/* <figure><img src={avatarUrl} alt="User Avatar" /></figure> */}
+      <Avatar alt="User Avatar" src={avatarUrl} />
       <ProfileInfo>
-        <Avatar alt="User Avatar" src={avatarUrl} />
         <Name>{name}</Name>
         <Email>{email}</Email>
         <Phone>{phone}</Phone>
       </ProfileInfo>
       <EditButton onClick={onEdit}>Edit Profile</EditButton>
-    </CardContainer>
+    </CandidateProfileSection>
   );
 };

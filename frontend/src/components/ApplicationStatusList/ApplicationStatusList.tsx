@@ -2,9 +2,11 @@ import { ApplicationStatusCard } from '@/components/ApplicationStatusCard/Applic
 import type { ApplicationStatus } from '@/types/Status';
 
 import {
-  ApplicationContainer,
-  Title,
+  ApplicationSection,
+  ApplicationSectionHeader,
+  ApplicationSectionTitle,
   StatusList,
+  ListItem,
 } from './ApplicationStatusList.styled';
 
 type ApplicationStatusListProps = {
@@ -14,15 +16,18 @@ type ApplicationStatusListProps = {
 export const ApplicationStatusList: React.FC<ApplicationStatusListProps> = ({
   applicationStatus,
 }) => {
-
   return (
-    <ApplicationContainer>
-      <Title>Application Status List</Title>
+    <ApplicationSection>
+      <ApplicationSectionHeader>
+        <ApplicationSectionTitle>Application Status List</ApplicationSectionTitle>
+      </ApplicationSectionHeader>
       <StatusList>
         {applicationStatus.map((statusCard) => (
-          <ApplicationStatusCard key={statusCard.id} statusCard={statusCard} />
+          <ListItem key={statusCard.id}>
+            <ApplicationStatusCard statusCard={statusCard} />
+          </ListItem>
         ))}
       </StatusList>
-    </ApplicationContainer>
+    </ApplicationSection>
   );
 };

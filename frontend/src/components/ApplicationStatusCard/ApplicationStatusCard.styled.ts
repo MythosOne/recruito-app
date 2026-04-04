@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Card = styled.div`
+export const Card = styled.article`
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;

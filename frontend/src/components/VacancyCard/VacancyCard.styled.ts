@@ -3,7 +3,7 @@ import { theme } from '@/theme/theme';
 
 const { breakpoints, shadows } = theme;
 
-export const Card = styled.li<{ variant?: "main" | "profile" }>`
+export const Card = styled.article<{ variant?: "main" | "profile" }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
