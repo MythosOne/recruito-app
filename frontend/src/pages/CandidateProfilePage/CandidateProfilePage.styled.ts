@@ -3,13 +3,13 @@ import styled from '@emotion/styled';
 import { theme } from '@/theme/theme';
 const { breakpoints, shadows } = theme;
 
-export const ProfilePageSection = styled.section`
+export const ProfilePageContainer = styled.main`
   display: grid;
   gap: 1rem;
   padding: 1rem;
   margin: 0 auto;
   box-sizing: border-box;
-  width: 1240px;
+  /* width: 1240px; */
   height: 90vh;
 
   grid-template-areas:
@@ -22,11 +22,16 @@ export const ProfilePageSection = styled.section`
   border-radius: 8px; */
 
   @media screen and (min-width: ${breakpoints.tablet}) {
+    width: 768px;
     grid-template-areas:
       'title title'
       'profile-card vacancy-list'
       'profile-card application-status';
   }
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    width: 1240px;
+  };
 `;
 
 export const TitlePage = styled.h1`

@@ -1,6 +1,5 @@
 import { HeroSection } from '@/components/HeroSection/HeroSection';
 import { VacancyList } from '@/components/VacancyList/VacancyList';
-import { CandidateProfilePage } from '../CandidateProfilePage/CandidateProfilePage';
 import { vacancies } from '@/data/dataVacancies';
 
 import { HomePageContainer } from './HomePage.styled';
@@ -14,7 +13,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onLogin }) => {
     <HomePageContainer>
       <HeroSection onLogin={onLogin} />
       <VacancyList vacancies={vacancies} />
-      <CandidateProfilePage />
     </HomePageContainer>
   );
 };

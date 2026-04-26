@@ -3,7 +3,8 @@ import type { Vacancy } from '@/types/Vacancy';
 import {
   Card,
   Logo,
-  Title,
+  JobInfo,
+  Position,
   Company,
   Location,
   Description,
@@ -22,24 +23,44 @@ export const VacancyCard: React.FC<VacancyCardProps> = ({
   vacancy,
   variant = 'main',
 }) => {
-  const { title, company, location, employmentType, description, tags } =
+  const { position, company, location, employmentType, description, tags } =
     vacancy;
-  return (
-    <Card variant={variant}>
-      {variant === 'profile' && <Logo src="/logo.png" alt="Company Logo" />}
-      <Title>{title}</Title>
+
+  const content = (
+    <>
+      <Position>{position}</Position>
       <Company>{company}</Company>
       <Location>
         {location} • {employmentType}
       </Location>
-      <Tooltip title={description}>
-        <Description>{description}</Description>
-      </Tooltip>
-      <Tags>
-        {tags.map((tag) => (
-          <Tag key={tag}>{tag}</Tag>
-        ))}
-      </Tags>
+      {variant === 'main' ? (
+        <>
+          <Description>{description}</Description>
+          <Tags>
+            {tags.map((tag) => (
+              <Tag key={tag}>{tag}</Tag>
+            ))}
+          </Tags>
+        </>
+      ) : (
+        <>
+          <Tooltip title={description}>
+            <Description>Job description...</Description>
+          </Tooltip>
+          <Tags>
+            {tags.map((tag) => (
+              <Tag key={tag}>{tag}</Tag>
+            ))}
+          </Tags>
+        </>
+      )}
+    </>
+  );
+
+  return (
+    <Card variant={variant}>
+      {variant === 'profile' && <Logo src="/logo.png" alt="Company Logo" />}
+      {variant === 'main' ? content : <JobInfo>{content}</JobInfo>}
       {variant === 'profile' && <RespondedButton>Responded</RespondedButton>}
     </Card>
   );

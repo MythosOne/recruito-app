@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { theme } from '@/theme/theme';
 
-const { breakpoints, shadows } = theme;
+const { /*breakpoints,*/ shadows } = theme;
 
 export const ApplicationSection = styled.section`
   grid-area: application-status;

@@ -35,9 +35,11 @@ export const VacancyList: React.FC<VacancyListProps> = ({
       : vacancies;
 
   return (
-    <VacancySection>
-      <VacancySectionHeader>
-        <VacancySectionTitle>Open Vacancies</VacancySectionTitle>
+    <VacancySection variant={variant}>
+      <VacancySectionHeader variant={variant}>
+        <VacancySectionTitle variant={variant}>
+          Open Vacancies
+        </VacancySectionTitle>
       </VacancySectionHeader>
       <VacancyListContainer key={currentPage} variant={variant}>
         {selectedVacancies.map((vacancie) => (

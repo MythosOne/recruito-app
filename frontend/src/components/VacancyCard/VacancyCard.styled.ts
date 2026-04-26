@@ -3,15 +3,18 @@ import { theme } from '@/theme/theme';
 
 const { breakpoints, shadows } = theme;
 
-export const Card = styled.article<{ variant?: "main" | "profile" }>`
+export const Card = styled.article<{ variant?: 'main' | 'profile' }>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ variant }) => (variant === 'main' ? 'column' : 'row')};
   justify-content: center;
   align-items: center;
   gap: 6px;
   padding: 5px;
 
-  width: clamp(280px, 90vw, 880px);
+  width: ${({ variant }) =>
+    variant === 'main'
+      ? 'clamp(280px, 90vw, 880px)'
+      : 'clamp(280px, 80vw, 680px)'};
   height: 150px;
 
   border: 1px solid #a2a2a2;
@@ -24,7 +27,7 @@ export const Card = styled.article<{ variant?: "main" | "profile" }>`
 
   &:hover,
   &:focus-visible {
-    transform: scale(1.02);
+    ${({ variant }) => variant === 'main' && 'transform: scale(1.02);'}
     border: 2px solid #f5cc66;
     box-shadow: ${shadows.hoverShadow};
   }
@@ -40,9 +43,23 @@ export const Card = styled.article<{ variant?: "main" | "profile" }>`
   }  */
 `;
 
-export const Logo = styled.img``;
+export const JobInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+`;
 
-export const Title = styled.h3`
+export const Logo = styled.img`
+  grid-area: logo;
+  width: clamp(80px, 15vw, 120px);
+  height: clamp(80px, 15vh, 120px);
+  border-radius: 6px;
+  border: 2px solid #a2a2a2;
+`;
+
+export const Position = styled.h3`
   font-size: 24px;
   margin: 0;
 `;

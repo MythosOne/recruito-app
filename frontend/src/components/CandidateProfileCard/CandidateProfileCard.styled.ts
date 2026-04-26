@@ -5,7 +5,7 @@ const { breakpoints, shadows } = theme;
 
 export const CandidateProfileSection = styled.section`
   grid-area: profile-card;
-  width: 400px;
+  /* width: 400px; */
   
   border: 2px solid #f5cc66;
   border-radius: 8px;

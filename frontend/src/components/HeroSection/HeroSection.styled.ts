@@ -43,7 +43,7 @@ export const Section = styled.section`
     @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
       background-image: url(${bgDesktop2x});
     }
-    width: 1280px;
+    width: 1240px;
     height: 600px;
   }
 `;
