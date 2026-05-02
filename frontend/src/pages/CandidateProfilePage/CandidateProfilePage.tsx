@@ -15,7 +15,7 @@ export const CandidateProfilePage = () => {
   return (
     <ProfilePageContainer>
       <TitlePage>Candidate Profile</TitlePage>
-      <CandidateProfileCard onEdit={() => setIsEditing(true)} />
+      <CandidateProfileCard onEdit={() => setIsEditing(!isEditing)} />
       {isEditing && <EditProfileForm onEdit={() => setIsEditing(false)} />}
       <VacancyList vacancies={vacancies} variant="profile" />
       <ApplicationStatusList applicationStatus={applicationStatus} />
