@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
-import { theme } from '@/theme/theme';
+// import { theme } from '@/theme/theme';
 
-const { /*breakpoints,*/ shadows } = theme;
+// const { breakpoints, shadows } = theme;
 
 const fadeIn = keyframes`
   from {

@@ -19,9 +19,9 @@ export const EditProfileForm: React.FC<UserFormProps> = ({ onEdit }) => {
   const [resetKey, setResetKey] = useState(0);
   const [isSubmitButton, setIsSubmitButton] = useState(true);
 
-  // console.log('userInfo in EditProfileForm', userInfo);
-  // console.log(' Position:', position);
-  // console.log(' Photo:', photo);
+  console.log('userInfo in EditProfileForm', userInfo);
+  console.log(' Position:', position);
+  console.log(' Photo:', photo);
 
   // const isFormValid = !!( Object.keys(userInfo).length && position && photo);
   // console.log(isFormValid)

@@ -11,12 +11,12 @@ import { applicationStatus } from '@/data/dataApplicationStatus';
 
 export const CandidateProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
-
+  console.log(isEditing)
   return (
     <ProfilePageContainer>
       <TitlePage>Candidate Profile</TitlePage>
       <CandidateProfileCard onEdit={() => setIsEditing(true)} />
-      {isEditing && <EditProfileForm />}
+      {isEditing && <EditProfileForm onEdit={() => setIsEditing(false)} />}
       <VacancyList vacancies={vacancies} variant="profile" />
       <ApplicationStatusList applicationStatus={applicationStatus} />
     </ProfilePageContainer>

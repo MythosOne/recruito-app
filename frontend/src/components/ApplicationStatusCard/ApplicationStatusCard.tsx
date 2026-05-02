@@ -5,10 +5,10 @@ import {
   StatusBadge,
 } from './ApplicationStatusCard.styled';
 
-import type { applicationStatus } from '@/types/Status';
+import type { ApplicationStatus } from '@/types/Status';
 
 type ApplicationStatusCardProps = {
-  statusCard: applicationStatus;
+  statusCard: ApplicationStatus;
 };
 export const ApplicationStatusCard: React.FC<ApplicationStatusCardProps> = ({
   statusCard,
