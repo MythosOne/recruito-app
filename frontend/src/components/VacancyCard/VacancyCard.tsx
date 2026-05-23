@@ -61,7 +61,11 @@ export const VacancyCard: React.FC<VacancyCardProps> = ({
     <Card variant={variant}>
       {variant === 'profile' && <Logo src="/logo.png" alt="Company Logo" />}
       {variant === 'main' ? content : <JobInfo>{content}</JobInfo>}
-      {variant === 'profile' && <RespondedButton>Responded</RespondedButton>}
+      {variant === 'profile' && (
+        <RespondedButton onClick={() => console.log('Responded')}>
+          Responded
+        </RespondedButton>
+      )}
     </Card>
   );
 };

@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { EditProfileForm } from '@/components/forms/ProfileForm/EditProfileForm';
+
 import { Avatar } from '@mui/material';
 import {
   CandidateProfileSection,
@@ -18,13 +21,14 @@ type User = {
 
 type ProfileCardProps = {
   user?: User;
-  onEdit: () => void;
+  // onEdit: () => void;
 };
 
 export const CandidateProfileCard: React.FC<ProfileCardProps> = ({
   user,
-  onEdit,
+  // onEdit,
 }) => {
+  const [isEditing, setIsEditing] = useState(false);
   const { name, email, phone, avatarUrl } = user || {};
 
   return (
@@ -35,9 +39,12 @@ export const CandidateProfileCard: React.FC<ProfileCardProps> = ({
       <ProfileInfo>
         <Name>{name}</Name>
         <Email>{email}</Email>
-        <Phone>{phone ?? "Not provided"}</Phone>
+        <Phone>{phone ?? 'Not provided'}</Phone>
       </ProfileInfo>
-      <EditButton onClick={onEdit}>Edit Profile</EditButton>
+      <EditButton onClick={() => setIsEditing(!isEditing)}>
+        Edit Profile
+      </EditButton>
+      {isEditing && <EditProfileForm />}
     </CandidateProfileSection>
   );
 };

@@ -9,10 +9,11 @@ import { SubmitButton } from '@/components/forms/ui/Button/SubmitButton';
 
 import { FormContainer } from './EditProfileForm.styled';
 
-type UserFormProps = {
-  onEdit: (user: User) => void;
-};
-export const EditProfileForm: React.FC<UserFormProps> = ({ onEdit }) => {
+// type UserFormProps = {
+//   onEdit: (user: User) => void;
+// };
+
+export const EditProfileForm/*: React.FC<UserFormProps>*/ = (/*{ onEdit }*/) => {
   const [userInfo, setUserInfo] = useState({ name: '', email: '', phone: '' });
   const [position, setPosition] = useState('');
   const [photo, setPhoto] = useState<File | null>(null);
@@ -36,14 +37,14 @@ export const EditProfileForm: React.FC<UserFormProps> = ({ onEdit }) => {
     } else {
       setIsSubmitButton(true);
     }
-  }, [userInfo, position, photo]);
+  }, [userInfo, position, photo, isUserInfoFilled]);
 
   const onSubmit = () => {
     if (isUserInfoFilled && position && photo) {
       const newUser: User = { id: nanoid(), ...userInfo, position, photo };
       setIsSubmitButton(true);
       console.log('Form submitted:', newUser);
-      onEdit(newUser);
+      // onEdit(newUser);
     } else {
       console.log('Not all forms are filled correctly');
       setIsSubmitButton(true);

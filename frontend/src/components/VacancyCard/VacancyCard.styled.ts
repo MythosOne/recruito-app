@@ -13,8 +13,8 @@ export const Card = styled.article<{ variant?: 'main' | 'profile' }>`
 
   width: ${({ variant }) =>
     variant === 'main'
-      ? 'clamp(280px, 90vw, 880px)'
-      : 'clamp(280px, 80vw, 680px)'};
+      ? 'clamp(320px, 90vw, 880px)'
+      : 'clamp(320px, 60vw, 680px)'};
   height: 150px;
 
   border: 1px solid #a2a2a2;

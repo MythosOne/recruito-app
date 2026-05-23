@@ -2,13 +2,15 @@ import styled from '@emotion/styled';
 
 export const Card = styled.article`
   background-color: #fff;
+  border: 1px solid #a2a2a2;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  width: 300px;
+
+  width: clamp(320px, 60vw, 680px);
 `;
 
 export const LogoCompany = styled.img`

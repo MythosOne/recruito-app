@@ -63,10 +63,14 @@ export const VacancySectionTitle = styled.h2<{ variant?: 'main' | 'profile' }>`
 `;
 
 export const VacancyListContainer = styled.ul<{ variant?: 'main' | 'profile' }>`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  width: 100%;
+  gap: ${({ variant }) => (variant === 'main' ? '20px' : '6px')};
+
+  padding: 10px;
 
   height: ${({ variant }) => (variant === 'profile' ? '350px' : 'auto')};
   overflow: ${({ variant }) => (variant === 'profile' ? 'scroll' : null)};
@@ -74,7 +78,9 @@ export const VacancyListContainer = styled.ul<{ variant?: 'main' | 'profile' }>`
   animation: ${fadeIn} 500ms ease forwards;
 `;
 
-export const VacancyListItem = styled.li``;
+export const VacancyListItem = styled.li`
+  /* width: 100%; */
+`;
 
 // export const ListVacancy = styled.ul<{ $isExiting: boolean }>`
 // display: flex;

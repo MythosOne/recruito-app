@@ -28,6 +28,11 @@ export const ApplicationSectionTitle = styled.h2`
 export const StatusList = styled.ul`
   overflow: scroll;
   height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
 `;
 
 export const ListItem = styled.li``;
