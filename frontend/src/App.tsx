@@ -7,7 +7,7 @@ import './App.styled';
 
 function App() {
   const [authMode, setAuthMode] = useState<'login' | 'register' | null>(null);
-
+  
   return (
     <>
       <AppRoutes setAuthMode={setAuthMode} />
