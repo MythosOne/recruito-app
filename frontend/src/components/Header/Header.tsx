@@ -10,7 +10,7 @@ type HeaderProps = {
 
 export const Header: React.FC<HeaderProps> = ({ onLogin, onRegister }) => {
   //!Сделать плавный scroll
-  const isLoggedIn = true; //TODO: Получать из контекста авторизации
+  const isLoggedIn = location.pathname === '/recruito-app/candidate'; //TODO: Получать из контекста авторизации
 
   return (
     <Section>
