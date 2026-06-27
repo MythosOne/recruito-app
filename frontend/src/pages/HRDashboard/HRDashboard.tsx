@@ -1,5 +1,11 @@
-import { HRDashboardContainer } from './HRDashboard.styled';
+import { CandidateCard } from '@/components/CandidatesCard/CandidateCard';
+import { HRDashboardContainer, Title } from './HRDashboard.styled';
 
 export const HRDashboard = () => {
-  return <HRDashboardContainer>HR Dashboard Page</HRDashboardContainer>;
+  return (
+    <HRDashboardContainer>
+      <Title>HR Dashboard Page</Title>
+      <CandidateCard />
+    </HRDashboardContainer>
+  );
 };
