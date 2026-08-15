@@ -1,15 +1,18 @@
 import styled from '@emotion/styled';
 
-export const Card = styled.div`
+export const CandidateCardContainer = styled.li`
   display: flex;
+  justify-content: space-between;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 16px;
   margin: 16px;
+  max-width: 850px;
+  max-height: 100px;
 `;
 
 export const Avatar = styled.img`
-  width: 100%;
+  width: 10%;
   height: auto;
 `;
 
@@ -23,6 +26,12 @@ export const StatusBlock = styled.div`
 
 export const ExpandedInfo = styled.div`
   margin-top: 8px;
+`;
+
+export const ViewDetailsIcon = styled.span`
+  display: inline-block;
+  margin-right: 0.5rem;
+  cursor: pointer;
 `;
 
 export const ApproveButton = styled.button`
