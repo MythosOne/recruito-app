@@ -1,14 +1,19 @@
+import { dataRecruiter } from '@/data/dataRecruiter';
 import {
   SidebarContainer,
-  SidebarTitle,
+  SidebarUserInfo,
+  UserAvatar,
+  AvatarImg,
+  UserName,
   SidebarNav,
   SidebarList,
   SidebarListItem,
   SidebarLink,
+  ButtonLogout,
 } from './Sidebar.styled';
 
 export const Sidebar = () => {
-  const NavItems = [
+  const navItems = [
     { label: 'Candidates', to: '/hr/candidates' },
     { label: 'Vacancies', to: '/hr/vacancies' },
     { label: 'Applications', to: '/hr/applications' },
@@ -17,17 +22,29 @@ export const Sidebar = () => {
 
   return (
     <SidebarContainer>
-      <SidebarTitle>HR Workspace</SidebarTitle>
+      <SidebarUserInfo>
+        <UserAvatar>
+          <AvatarImg src={dataRecruiter[0].avatarUrl} alt="user avatar" />
+        </UserAvatar>
+        <UserName>{dataRecruiter[0].name}</UserName>
+      </SidebarUserInfo>
       <SidebarNav aria-label="HR sections">
-        <SidebarList>{
-          NavItems.map(({label, to}) => (
+        <SidebarList>
+          {navItems.map(({ label, to }) => (
             <SidebarListItem key={to}>
-              <SidebarLink href={to}>{label}</SidebarLink>
+              <SidebarLink to={to}>{label}</SidebarLink>
             </SidebarListItem>
-          ))
-        }
+          ))}
         </SidebarList>
       </SidebarNav>
+      <ButtonLogout
+        type="button"
+        onClick={() => {
+          console.log('Logout button clicked');
+        }}
+      >
+        Logout
+      </ButtonLogout>
     </SidebarContainer>
   );
 };

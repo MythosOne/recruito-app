@@ -1,7 +1,10 @@
 import styled from '@emotion/styled';
 import { theme } from '@/theme/theme';
 
-const { shadows, colors } = theme;
+const {
+  shadows: { hoverShadow },
+  colors: { primary, secondary },
+} = theme;
 
 export const ActionContainer = styled.div``;
 
@@ -21,7 +24,7 @@ export const ActionButton = styled.button`
   height: 34px;
   border-radius: 80px;
   border: none;
-  background-color: ${colors.primary};
+  background-color: ${primary};
 
   transition:
     transform 250ms,
@@ -31,8 +34,8 @@ export const ActionButton = styled.button`
   &:hover,
   &:focus-visible {
     transform: scale(1.05);
-    background-color: ${colors.secondary};
-    box-shadow: ${shadows.hoverShadow};
+    background-color: ${secondary};
+    box-shadow: ${hoverShadow};
   }
 
   &:active {

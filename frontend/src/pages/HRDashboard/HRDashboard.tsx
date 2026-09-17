@@ -5,7 +5,8 @@ import { Sidebar } from '@/components/Sidebar/Sidebar';
 import { HRFilters } from '@/components/HRFilters/HRFilters';
 import { CandidatesList } from '@/components/CandidatesList/CandidatesList';
 import { PaginationControls } from '@/components/PaginationControls/PaginationControls';
-import { candidates } from '@/data/dataCandidates';
+import { candidates as initialCandidates } from '@/data/dataCandidates';
+import type { Candidate } from '@/types/Candidate';
 
 import { HRDashboardContainer, Title } from './HRDashboard.styled';
 
@@ -14,6 +15,8 @@ const ITEMS_PER_PAGE = 7;
 export const HRDashboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [filters, setFilters] = useState<FiltersState>(initialFiltersState);
+  const [candidates, setCandidates] = useState<Candidate[]>(initialCandidates);
+  console.log(candidates);
 
   const dataCandidatesPosition = [
     ...new Set(candidates.map((el) => el.candidateInfo.position)),
@@ -43,6 +46,14 @@ export const HRDashboard = () => {
     setCurrentPage(1);
   };
 
+  const handleStatusChange = (candidateId: string, newStatus: "approved" | "rejected") => {
+    setCandidates((prevCandidates) =>
+      prevCandidates.map((candidate) =>
+        candidate.id === candidateId ? { ...candidate, status: newStatus } : candidate
+      )
+    );
+  };
+
   return (
     <HRDashboardContainer>
       <Title>HR Dashboard Page</Title>
@@ -52,7 +63,7 @@ export const HRDashboard = () => {
         onFiltersChange={handleFiltersChange}
         availablePositions={dataCandidatesPosition}
       />
-      <CandidatesList candidates={paginatedCandidates} />
+      <CandidatesList candidates={paginatedCandidates} onStatusChange={handleStatusChange} />
       <PaginationControls
         currentPage={currentPage}
         totalPages={totalPages}

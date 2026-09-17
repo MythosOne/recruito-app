@@ -9,15 +9,16 @@ import {
 
 type CandidatesListProps = {
   candidates: Candidate[];
+  onStatusChange: (candidateId: string, newStatus: "approved" | "rejected") => void;
 };
 
-export const CandidatesList = ({ candidates }: CandidatesListProps) => {
+export const CandidatesList = ({ candidates, onStatusChange }: CandidatesListProps) => {
   return (
     <CandidatesListContainer>
       <CandidatesListTitle>Candidates List</CandidatesListTitle>
       <CandidatesListCard>
         {candidates.map((candidate) => (
-          <CandidateCard key={candidate.id} candidate={candidate} />
+          <CandidateCard key={candidate.id} candidate={candidate} onStatusChange={onStatusChange} />
         ))}
       </CandidatesListCard>
     </CandidatesListContainer>

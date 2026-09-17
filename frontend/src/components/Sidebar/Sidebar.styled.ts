@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 import { theme } from '@/theme/theme';
-const { breakpoints } = theme;
 
 const {
-  colors: { secondary },
+  breakpoints,
+  colors: { primary, secondary },
+  shadows: { hoverShadow },
 } = theme;
 
 export const SidebarContainer = styled.section`
@@ -22,10 +23,13 @@ export const SidebarContainer = styled.section`
   }
 `;
 
-export const SidebarTitle = styled.h2`
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+export const SidebarUserInfo = styled.div`
+display: flex;
 `;
+
+export const UserAvatar = styled.div``;
+export const AvatarImg = styled.img``;
+export const UserName = styled.span``;
 
 export const SidebarNav = styled.nav``;
 export const SidebarList = styled.ul``;
@@ -41,5 +45,32 @@ export const SidebarLink = styled(NavLink)`
 
   &:hover {
     color: ${secondary};
+  }
+`;
+
+export const ButtonLogout = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 34px;
+  border-radius: 80px;
+  border: none;
+  background-color: ${primary};
+
+  transition:
+    transform 250ms,
+    background-color 250ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.05);
+    background-color: ${secondary};
+    box-shadow: ${hoverShadow};
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 `;

@@ -24,7 +24,14 @@ export const StatusBlock = styled.div`
   margin-top: 8px;
 `;
 
-export const ExpandedInfo = styled.div`
+export const ExpandedInfo = styled.button`
+  background: none;
+  border: none;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
   margin-top: 8px;
 `;
 

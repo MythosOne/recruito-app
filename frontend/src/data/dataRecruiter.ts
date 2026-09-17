@@ -1,0 +1,50 @@
+export const dataRecruiter = [
+    {
+    id: '1',
+    avatarUrl: 'https://i.pravatar.cc/300?img=12',
+    name: 'Анна Ковальська',
+    email: 'anna.koval@recruito.com',
+    company: 'Recruito Agency',
+    role: 'Recruiter',
+  },
+  {
+    id: '2',
+    avatarUrl: 'https://i.pravatar.cc/300?img=15',
+    name: 'Виктор Авраменко',
+    email: 'viktor.avramenko@recruito.com',
+    company: 'Recruito Agency',
+    role: 'Recruiter',
+  },
+  {
+    id: '3',
+    avatarUrl: 'https://i.pravatar.cc/300?img=21',
+    name: 'Марина Ткаченко',
+    email: 'marina.tkachenko@recruito.com',
+    company: 'Recruito Agency',
+    role: 'Recruiter',
+  },
+  {
+    id: '4',
+    avatarUrl: 'https://i.pravatar.cc/300?img=33',
+    name: 'Олександр Бондар',
+    email: 'oleksandr.bondar@recruito.com',
+    company: 'Recruito Agency',
+    role: 'Recruiter',
+  },
+  {
+    id: '5',
+    avatarUrl: 'https://i.pravatar.cc/300?img=44',
+    name: 'Наталія Сидоренко',
+    email: 'natalia.sydorenko@recruito.com',
+    company: 'Recruito Agency',
+    role: 'Recruiter',
+  },
+  {
+    id: '6',
+    avatarUrl: 'https://i.pravatar.cc/300?img=52',
+    name: 'Дмитро Іваненко',
+    email: 'dmytro.ivanenko@recruito.com',
+    company: 'Recruito Agency',
+    role: 'Recruiter',
+  }
+]
