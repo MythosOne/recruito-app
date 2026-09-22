@@ -1,22 +1,19 @@
 import { useState } from 'react';
 import { type FiltersState, initialFiltersState } from '@/types/Filters';
-
-import { Sidebar } from '@/components/Sidebar/Sidebar';
-import { HRFilters } from '@/components/HRFilters/HRFilters';
-import { CandidatesList } from '@/components/CandidatesList/CandidatesList';
-import { PaginationControls } from '@/components/PaginationControls/PaginationControls';
 import { candidates as initialCandidates } from '@/data/dataCandidates';
 import type { Candidate } from '@/types/Candidate';
 
-import { HRDashboardContainer, Title } from './HRDashboard.styled';
+import { HRFilters } from '@/components/HRFilters/HRFilters';
+import { CandidatesList } from '@/components/CandidatesList/CandidatesList';
+import { PaginationControls } from '@/components/PaginationControls/PaginationControls';
 
 const ITEMS_PER_PAGE = 7;
 
-export const HRDashboard = () => {
+const CandidatesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [filters, setFilters] = useState<FiltersState>(initialFiltersState);
   const [candidates, setCandidates] = useState<Candidate[]>(initialCandidates);
-  console.log(candidates);
+//   console.log(candidates);
 
   const dataCandidatesPosition = [
     ...new Set(candidates.map((el) => el.candidateInfo.position)),
@@ -46,29 +43,37 @@ export const HRDashboard = () => {
     setCurrentPage(1);
   };
 
-  const handleStatusChange = (candidateId: string, newStatus: "approved" | "rejected") => {
+  const handleStatusChange = (
+    candidateId: string,
+    newStatus: 'approved' | 'rejected',
+  ) => {
     setCandidates((prevCandidates) =>
       prevCandidates.map((candidate) =>
-        candidate.id === candidateId ? { ...candidate, status: newStatus } : candidate
-      )
+        candidate.id === candidateId
+          ? { ...candidate, status: newStatus }
+          : candidate,
+      ),
     );
   };
 
   return (
-    <HRDashboardContainer>
-      <Title>HR Dashboard Page</Title>
-      <Sidebar />
+    <>
       <HRFilters
         filters={filters}
         onFiltersChange={handleFiltersChange}
         availablePositions={dataCandidatesPosition}
       />
-      <CandidatesList candidates={paginatedCandidates} onStatusChange={handleStatusChange} />
+      <CandidatesList
+        candidates={paginatedCandidates}
+        onStatusChange={handleStatusChange}
+      />
       <PaginationControls
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={setCurrentPage}
       />
-    </HRDashboardContainer>
+    </>
   );
 };
+
+export default CandidatesPage;

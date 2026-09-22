@@ -16,7 +16,7 @@ const defaultUser = {
   avatarUrl: '/path/to/avatar.jpg',
 };
 
-export const CandidateProfilePage = () => {
+const CandidateProfilePage = () => {
   // const [isEditing, setIsEditing] = useState(false);
   // console.log(isEditing)
   return (
@@ -29,3 +29,5 @@ export const CandidateProfilePage = () => {
     </ProfilePageContainer>
   );
 };
+
+export default CandidateProfilePage;

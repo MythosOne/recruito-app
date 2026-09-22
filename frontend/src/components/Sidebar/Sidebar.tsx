@@ -14,10 +14,10 @@ import {
 
 export const Sidebar = () => {
   const navItems = [
-    { label: 'Candidates', to: '/hr/candidates' },
-    { label: 'Vacancies', to: '/hr/vacancies' },
-    { label: 'Applications', to: '/hr/applications' },
-    { label: 'Settings', to: '/hr/settings' },
+    { label: 'Candidates', to: '/hr-dashboard/candidates' },
+    { label: 'Vacancies', to: '/hr-dashboard/vacancies' },
+    { label: 'Applications', to: '/hr-dashboard/applications' },
+    { label: 'Settings', to: '/hr-dashboard/settings' },
   ];
 
   return (

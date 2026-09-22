@@ -10,10 +10,10 @@ export const HRDashboardContainer = styled.main`
   box-sizing: border-box;
 
   grid-template-areas:
-      'title'
-      'hr-filters'
-      'candidates-list'
-      'pagination';
+    'title'
+    'hr-filters'
+    'candidates-list'
+    'pagination';
 
   @media screen and (min-width: ${breakpoints.tablet}) {
     grid-template-areas:
@@ -30,3 +30,10 @@ export const Title = styled.h1`
   font-weight: bold;
   margin-bottom: 1rem;
 `;
+
+export const DashboardContent = styled.div`
+  margin: 0 40px 0 300px;
+  padding: 10px;
+`;
+
+export const Loader = styled.div``;
