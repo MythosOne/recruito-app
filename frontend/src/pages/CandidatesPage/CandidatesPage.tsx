@@ -13,7 +13,6 @@ const CandidatesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [filters, setFilters] = useState<FiltersState>(initialFiltersState);
   const [candidates, setCandidates] = useState<Candidate[]>(initialCandidates);
-//   console.log(candidates);
 
   const dataCandidatesPosition = [
     ...new Set(candidates.map((el) => el.candidateInfo.position)),

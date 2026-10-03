@@ -3,7 +3,7 @@ import { Button } from './SubmitButton.styled';
 
 interface SubmitButtonProps {
   type: 'button' | 'submit';
-  variant?: 'signUp' | 'login' | 'register';
+  variant?: 'signUp' | 'login' | 'register' | 'submit';
   onClick?: () => void;
   disabled?: boolean;
   children: React.ReactNode;

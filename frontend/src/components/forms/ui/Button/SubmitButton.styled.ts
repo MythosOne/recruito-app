@@ -4,7 +4,7 @@ import { theme } from '@/theme/theme';
 const { shadows } = theme;
 
 type ButtonProps = {
-  variant?: 'signUp' | 'login' | 'register';
+  variant?: 'signUp' | 'login' | 'register'| 'submit';
   disabled?: boolean;
 };
 
