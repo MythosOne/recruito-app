@@ -20,9 +20,13 @@ import type { Vacancy } from '@/types/Vacancy';
 // };
 type VacanciesFormProps = {
   onCreateVacancy: (newVacancy: Vacancy) => void;
+  currentRecruiterId: string;
 };
 
-export const VacanciesForm = ({ onCreateVacancy }: VacanciesFormProps) => {
+export const VacanciesForm = ({
+  onCreateVacancy,
+  currentRecruiterId,
+}: VacanciesFormProps) => {
   const formik = useFormik({
     initialValues: {
       position: '',
@@ -30,7 +34,7 @@ export const VacanciesForm = ({ onCreateVacancy }: VacanciesFormProps) => {
       location: '',
       employmentType: '',
       description: '',
-      tags: [],
+      tags: '',
     },
     validationSchema: Yup.object().shape({
       position: Yup.string().min(3).max(50).required('Position is required'),
@@ -44,15 +48,22 @@ export const VacanciesForm = ({ onCreateVacancy }: VacanciesFormProps) => {
         .min(3)
         .max(200)
         .required('Description is required'),
-      tags: Yup.array()
-        .of(Yup.string())
-        .min(1, 'At least one tag is required')
+      tags: Yup.string()
+        .test('tags-required', 'At least one tag is required', (value) =>
+          Boolean(value?.split(',').some((tag) => tag.trim())),
+        )
         .required('Tags are required'),
     }),
     onSubmit: (values, { resetForm }) => {
       const newVacancy: Vacancy = {
         id: nanoid(),
+        recruiterId: currentRecruiterId,
+        status: 'draft',
         ...values,
+        tags: values.tags
+          .split(',')
+          .map((tag) => tag.trim().toLowerCase())
+          .filter(Boolean),
         createdAt: new Date().toISOString(),
       };
       onCreateVacancy(newVacancy);
@@ -121,20 +132,18 @@ export const VacanciesForm = ({ onCreateVacancy }: VacanciesFormProps) => {
         name="tags"
         label="Tags"
         placeholder="Enter tags (comma separated)"
-        value={formik.values.tags.join(', ')}
-        onChange={(e) => {
-          const tags = e.target.value
-            .split(',')
-            .map((tag) => tag.trim().toLowerCase())
-            .filter(Boolean);
-          formik.setFieldValue('tags', tags);
-        }}
+        value={formik.values.tags}
+        onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         error={formik.touched.tags && Boolean(formik.errors.tags)}
         helperText={formik.touched.tags && formik.errors.tags}
       />
-      <SubmitButton type="submit" variant="submit" disabled={!formik.isValid || !formik.dirty}>
-        Submit
+      <SubmitButton
+        type="submit"
+        variant="submit"
+        disabled={!formik.isValid || !formik.dirty}
+      >
+        CReate Vacancy
       </SubmitButton>
     </VacanciesFormContainer>
   );

@@ -13,16 +13,20 @@ export const HomePage: React.FC<HomePageProps> = ({ onLogin }) => {
   const context = useContext(VacanciesContext);
 
   if (!context) {
-  throw new Error('HomePage must be used within VacanciesProvider');
-}
+    throw new Error('HomePage must be used within VacanciesProvider');
+  }
 
-const { vacancies } = context;
-console.log("Vacancies", vacancies)
+  const { vacancies } = context;
+  console.log("Vacancies", vacancies)
+  const filteredVacancies = vacancies.filter(
+    ({ status }) => status === 'published',
+  );
+  console.log("filteredVacancies", filteredVacancies);
 
   return (
     <HomePageContainer>
       <HeroSection onLogin={onLogin} />
-      <VacancyList vacancies={vacancies} />
+      <VacancyList vacancies={filteredVacancies} />
     </HomePageContainer>
   );
 };

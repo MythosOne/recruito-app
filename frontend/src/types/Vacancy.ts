@@ -1,5 +1,6 @@
 export interface Vacancy {
   id: string;
+  recruiterId: string;
   position: string;
   company: string;
   location: string;
@@ -8,4 +9,5 @@ export interface Vacancy {
   tags: string[];
   createdAt: string;
   variant?: "main" | "profile"
+  status: 'draft' | 'published';
 }

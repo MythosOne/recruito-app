@@ -1,9 +1,12 @@
 import { useContext } from 'react';
 import { VacanciesForm } from '@/components/forms/VacanciesForm/VacanciesForm';
+import { VacanciesList } from '@/components/VacanciesList/VacanciesList';
 import { VacanciesContext } from '@/utils/VacanciesContext';
 import type { Vacancy } from '@/types/Vacancy';
 
 import { TitlePage } from '../CandidateProfilePage/CandidateProfilePage.styled';
+
+const currentRecruiterId = 'recruiter-123';
 
 const VacanciesPage = () => {
   const context = useContext(VacanciesContext);
@@ -21,7 +24,11 @@ const VacanciesPage = () => {
   return (
     <>
       <TitlePage>Vacancies Page</TitlePage>
-      <VacanciesForm onCreateVacancy={handleCreateVacancy} />
+      <VacanciesForm
+        onCreateVacancy={handleCreateVacancy}
+        currentRecruiterId={currentRecruiterId}
+      />
+      <VacanciesList recruiterId={currentRecruiterId} />
     </>
   );
 };
