@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
-export const CandidatesListContainer = styled.section`
-  grid-area: candidates-list;
+export const CandidatesListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +12,9 @@ export const CandidatesListContainer = styled.section`
 `;
 
 export const CandidatesListCard = styled.ul`
-  /* overflow: scroll; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   list-style: none;
   padding: 0;
   margin: 0;

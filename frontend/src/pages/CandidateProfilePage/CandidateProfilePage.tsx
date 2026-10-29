@@ -1,4 +1,5 @@
-// import { useState } from 'react';
+import { useContext } from 'react';
+import { VacanciesContext } from '@/utils/VacanciesContext';
 import { CandidateProfileCard } from '@/components/CandidateProfileCard/CandidateProfileCard';
 // import { EditProfileForm } from '@/components/forms/ProfileForm/EditProfileForm';
 import { VacancyList } from '@/components/VacancyList/VacancyList';
@@ -6,7 +7,7 @@ import { ApplicationStatusList } from '@/components/ApplicationStatusList/Applic
 
 import { ProfilePageContainer,  TitlePage} from './CandidateProfilePage.styled';
 
-import { vacancies } from '@/data/dataVacancies';
+// import { vacancies } from '@/data/dataVacancies';
 import { applicationStatus } from '@/data/dataApplicationStatus';
 
 const defaultUser = {
@@ -19,6 +20,13 @@ const defaultUser = {
 const CandidateProfilePage = () => {
   // const [isEditing, setIsEditing] = useState(false);
   // console.log(isEditing)
+  const context = useContext(VacanciesContext);
+  
+    if (!context) {
+      throw new Error('HomePage must be used within VacanciesProvider');
+    }
+  
+    const { vacancies } = context;
   return (
     <ProfilePageContainer>
       <TitlePage>Candidate Profile</TitlePage>

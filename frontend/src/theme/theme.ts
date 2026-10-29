@@ -8,6 +8,10 @@ export const theme = Object.freeze({
     // darkGray: '#7E7E7E',
     black: '#000',
     // overlay: 'rgba(0, 0, 0, 0.5)',
+    success: '#45a049',
+    pending: '#ff9800',
+    error: '#f44336',
+    warning: '#ff9800',
   },
   fonts: {
     main: "'Nunito', sans-serif",

@@ -9,7 +9,7 @@ export const candidates = [
       lastName: 'Doe',
       position: 'Frontend Developer',
     },
-    status: 'pending',
+    status: 'Pending',
     expandedInfo: {
       email: 'john.doe@example.com',
       phone: '+380671111111',
@@ -27,7 +27,7 @@ export const candidates = [
       lastName: 'Smith',
       position: 'UI/UX Designer',
     },
-    status: 'approved',
+    status: 'Approved',
     expandedInfo: {
       email: 'emily.smith@example.com',
       phone: '+380672222222',
@@ -45,7 +45,7 @@ export const candidates = [
       lastName: 'Brown',
       position: 'Backend Developer',
     },
-    status: 'pending',
+    status: 'Pending',
     expandedInfo: {
       email: 'michael.brown@example.com',
       phone: '+380673333333',
@@ -63,7 +63,7 @@ export const candidates = [
       lastName: 'Wilson',
       position: 'QA Engineer',
     },
-    status: 'rejected',
+    status: 'Rejected',
     expandedInfo: {
       email: 'sophia.wilson@example.com',
       phone: '+380674444444',
@@ -81,7 +81,7 @@ export const candidates = [
       lastName: 'Taylor',
       position: 'DevOps Engineer',
     },
-    status: 'approved',
+    status: 'Approved',
     expandedInfo: {
       email: 'daniel.taylor@example.com',
       phone: '+380675555555',
@@ -99,7 +99,7 @@ export const candidates = [
       lastName: 'Martin',
       position: 'React Native Developer',
     },
-    status: 'pending',
+    status: 'Pending',
     expandedInfo: {
       email: 'olivia.martin@example.com',
       phone: '+380676666666',
@@ -117,7 +117,7 @@ export const candidates = [
       lastName: 'Anderson',
       position: 'Full Stack Developer',
     },
-    status: 'approved',
+    status: 'Approved',
     expandedInfo: {
       email: 'james.anderson@example.com',
       phone: '+380677777777',
@@ -135,7 +135,7 @@ export const candidates = [
       lastName: 'Thomas',
       position: 'Project Manager',
     },
-    status: 'pending',
+    status: 'Pending',
     expandedInfo: {
       email: 'emma.thomas@example.com',
       phone: '+380678888888',
@@ -153,7 +153,7 @@ export const candidates = [
       lastName: 'Harris',
       position: 'Business Analyst',
     },
-    status: 'rejected',
+    status: 'Rejected',
     expandedInfo: {
       email: 'william.harris@example.com',
       phone: '+380679999999',
@@ -171,7 +171,7 @@ export const candidates = [
       lastName: 'Moore',
       position: 'Data Analyst',
     },
-    status: 'pending',
+    status: 'Pending',
     expandedInfo: {
       email: 'isabella.moore@example.com',
       phone: '+380670000000',

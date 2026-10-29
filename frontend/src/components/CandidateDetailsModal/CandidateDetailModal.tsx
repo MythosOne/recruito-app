@@ -1,4 +1,22 @@
+import { useState, useLayoutEffect } from 'react';
+import {
+  ModalOverlay,
+  ModalContainer,
+  ModalHeader,
+  CandidateDetails,
+  // CandidateName,
+  CandidatePosition,
+  CandidateEmail,
+  CandidatePhone,
+  CandidateExperience,
+  CandidateSkills,
+  CandidateLocation,
+  CandidateSummary,
+  CloseButton,
+} from './CandidateDetailModal.styled';
+
 type CandidateDetailModalProps = {
+  isOpen: boolean;
   candidate: {
     id: string;
     avatarUrl: string;
@@ -21,27 +39,61 @@ type CandidateDetailModalProps = {
 
 export const CandidateDetailModal = ({
   candidate,
+  isOpen,
   setIsOpen,
 }: CandidateDetailModalProps) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useLayoutEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+      requestAnimationFrame(() => {
+        setIsVisible(true);
+      });
+    } else {
+      setIsVisible(false);
+    }
+  }, [isOpen]);
+
+  const handleTransitionEnd = () => {
+    if (!isVisible) {
+      setIsMounted(false);
+    }
+  };
+
+  if (!isMounted) return null;
+
   const {
     candidateInfo: { firstName, lastName, position },
     expandedInfo: { email, phone, experience, skills, location, summary },
   } = candidate;
   return (
-    <div className="candidate-detail-modal">
-      <button onClick={() => setIsOpen(false)}>Close</button>
-      <div className="modal-content">
-        <h2>
-          {firstName} {lastName}
-        </h2>
-        <p>Position: {position}</p>
-        <p>Email: {email}</p>
-        <p>Phone: {phone}</p>
-        <p>Experience: {experience} years</p>
-        <p>Skills: {skills.join(', ')}</p>
-        <p>Location: {location}</p>
-        <p>Summary: {summary}</p>
-      </div>
-    </div>
+    <ModalOverlay visible={isVisible} onTransitionEnd={handleTransitionEnd}>
+      <ModalContainer
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="candidate-detail-modal"
+      >
+        <ModalHeader>
+          View details about {firstName} {lastName}
+        </ModalHeader>
+        <CandidateDetails>
+          {/* <CandidateName>
+            {firstName} {lastName}
+          </CandidateName> */}
+          <CandidatePosition>Position: {position}</CandidatePosition>
+          <CandidateEmail>Email: {email}</CandidateEmail>
+          <CandidatePhone>Phone: {phone}</CandidatePhone>
+          <CandidateExperience>
+            Experience: {experience} years
+          </CandidateExperience>
+          <CandidateSkills>Skills: {skills.join(', ')}</CandidateSkills>
+          <CandidateLocation>Location: {location}</CandidateLocation>
+          <CandidateSummary>Summary: {summary}</CandidateSummary>
+        </CandidateDetails>
+        <CloseButton onClick={() => setIsOpen(false)}>Close</CloseButton>
+      </ModalContainer>
+    </ModalOverlay>
   );
 };

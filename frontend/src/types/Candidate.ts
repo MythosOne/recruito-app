@@ -6,7 +6,7 @@ export interface Candidate {
     lastName: string;
     position: string;
   };
-  status: 'pending' | 'approved' | 'rejected';
+  status: 'Pending' | 'Approved' | 'Rejected';
   expandedInfo: {
     email: string;
     phone: string;

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const HRFiltersContainer = styled.section`
+export const HRFiltersContainer = styled.div`
   grid-area: hr-filters;
   width: 100%;
   height: 100px;

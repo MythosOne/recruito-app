@@ -1,15 +1,48 @@
-@import "normalize.css";
+@import 'normalize.css';
 
 // 🎨 CSS Variables
 :root {
   /* 🔧 Variables */
-  --font-main: 'Nunito', system-ui, sans-serif;
+  // Typography
+  --font-main: 'Inter', sans-serif;
+
+  // Brand
   --pr-color: #f4e041;
-  --sec-color: #00bdd3;
-  --bg-color: #f8f8f8;
+  --pr-color-hover: #f5cc66;
+
+  // Backgrounds
+  --bg-color: #f7f8fa;
+  --surface-color: #ffffff;
+
+  // Text
+  --text-color: #202124;
+  --text-secondary: #6b7280;
+
+  // Borders
+  --border-color: #e5e7eb;
+
+  // Secondary accent
+  --sec-color: #007f8b;
+
+  // Status colors
+  --success-color: #4caf50;
+  --error-color: #f44336;
+  --warning-color: #ff9800;
+
+  // Buttons
   --btn-radius: 80px;
-  --text-color: #000;
+
+  // --sec-color: #00bdd3;
+  // --bg-color: #f8f8f8;
+  // --btn-radius: 80px;
+  // --text-color: #000;
 }
+
+//! - Жёлтый — основные действия: создание вакансии, регистрация, отправка отклика.
+//! - Бирюзовый — ссылки и второстепенные интерактивные элементы.
+//! - Зелёный — одобрение кандидата.
+//! - Красный — отклонение кандидата и ошибки.
+//! - Нейтральные цвета — фон, карточки, разделители и обычный текст.
 
 // 🔧 Breakpoints (Sass переменные)
 $phone: 767px;
@@ -31,7 +64,7 @@ $tablet: 1023px;
 }
 
 @mixin desktop {
-  @media (min-width: #{$tablet + 1}) and (max-width: 2560px) {
+  @media (min-width: #{$tablet + 1}) {
     @content;
   }
 }
@@ -63,11 +96,11 @@ body {
 // ================================
 h1,
 h2 {
-  font-size: 40px;
+  font-size: 36px;
   line-height: 40px;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0;
-  
+
   // @include mobile {
   //   font-size: 28px;
   //   line-height: 32px;
@@ -88,7 +121,7 @@ h2 {
 // 🔘 Button
 // ================================
 button {
-  border-radius: 80px; /* можно оставить var(--btn-radius), если нужно */
+  border-radius: var(--btn-radius); /* можно оставить var(--btn-radius), если нужно */
   color: var(--text-color);
   font-size: 16px;
   font-weight: 400;
@@ -156,7 +189,9 @@ a {
   padding: 0;
   margin: 0;
   color: inherit;
-  transition: color 250ms, font-weight 250ms;
+  transition:
+    color 250ms,
+    font-weight 250ms;
 }
 
 a:hover {

@@ -9,7 +9,7 @@ import {
 
 type CandidatesListProps = {
   candidates: Candidate[];
-  onStatusChange: (candidateId: string, newStatus: "approved" | "rejected") => void;
+  onStatusChange: (candidateId: string, newStatus: "Approved" | "Rejected") => void;
 };
 
 export const CandidatesList = ({ candidates, onStatusChange }: CandidatesListProps) => {

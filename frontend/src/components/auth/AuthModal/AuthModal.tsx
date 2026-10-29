@@ -34,7 +34,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     } else {
       setIsVisible(false);
     }
-  }, [isOpen]);
+  }, [isOpen, mode]);
 
   const handleTransitionEnd = () => {
     if (!isVisible) {

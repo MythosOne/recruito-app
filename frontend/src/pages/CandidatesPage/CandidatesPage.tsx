@@ -7,6 +7,8 @@ import { HRFilters } from '@/components/HRFilters/HRFilters';
 import { CandidatesList } from '@/components/CandidatesList/CandidatesList';
 import { PaginationControls } from '@/components/PaginationControls/PaginationControls';
 
+import { CandidatesPageContainer } from './CandidatesPage.styled';
+
 const ITEMS_PER_PAGE = 7;
 
 const CandidatesPage = () => {
@@ -56,7 +58,7 @@ const CandidatesPage = () => {
   };
 
   return (
-    <>
+    <CandidatesPageContainer>
       <HRFilters
         filters={filters}
         onFiltersChange={handleFiltersChange}
@@ -71,7 +73,7 @@ const CandidatesPage = () => {
         totalPages={totalPages}
         onPageChange={setCurrentPage}
       />
-    </>
+    </CandidatesPageContainer>
   );
 };
 

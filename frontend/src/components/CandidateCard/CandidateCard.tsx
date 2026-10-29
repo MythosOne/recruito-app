@@ -1,23 +1,32 @@
+import { useState } from 'react';
+// import { createPortal } from 'react-dom';
 import type { Candidate } from '@/types/Candidate';
+
+import { CandidateDetailModal } from '../CandidateDetailsModal/CandidateDetailModal';
 
 import {
   CandidateCardContainer,
+  CandidateMainInfo,
+  AvatarWrapper,
   Avatar,
+  CandidateName,
+  CandidatePosition,
+  CandidateExperience,
+  CandidateLocation,
   CandidateInfo,
   StatusBlock,
+  CandidateActions,
   ExpandedInfo,
   ViewDetailsIcon,
   ApproveButton,
   RejectButton,
 } from './CandidateCard.styled';
-import { CandidateDetailModal } from '../CandidateDetailsModal/CandidateDetailModal';
-import { useState } from 'react';
 
 type CandidateCardProps = {
   candidate: Candidate;
   onStatusChange: (
     candidateId: string,
-    newStatus: 'approved' | 'rejected',
+    newStatus: 'Approved' | 'Rejected',
   ) => void;
 };
 
@@ -32,41 +41,57 @@ export const CandidateCard = ({
     status,
   } = candidate;
 
-    const [isOpenInfo, setIsOpenInfo] = useState(false);
+  const [isOpenInfo, setIsOpenInfo] = useState(false);
   return (
     <CandidateCardContainer>
-      <Avatar alt={`${firstName} ${lastName}`} src={avatarUrl} />
-      <CandidateInfo>
-        <strong>
-          {firstName} {lastName}
-        </strong>
-        <span>{position}</span>
-        <span>
-          {experience} years of experience, located in {location}
-        </span>
-      </CandidateInfo>
-      <StatusBlock>{status}</StatusBlock>
-      <ExpandedInfo
-        type="button"
-        aria-label={`View details of ${firstName} ${lastName}`}
-        onClick={() => setIsOpenInfo(true)}
-      >
-        <ViewDetailsIcon aria-hidden="true">⌄</ViewDetailsIcon>
-        View details
-      </ExpandedInfo>
-      {isOpenInfo && <CandidateDetailModal candidate={candidate} setIsOpen={setIsOpenInfo} />}
-      <ApproveButton
-        type="button"
-        onClick={() => onStatusChange(candidate.id, 'approved')}
-      >
-        Approve
-      </ApproveButton>
-      <RejectButton
-        type="button"
-        onClick={() => onStatusChange(candidate.id, 'rejected')}
-      >
-        Reject
-      </RejectButton>
+      <CandidateMainInfo>
+        <AvatarWrapper>
+          <Avatar alt={`${firstName} ${lastName}`} src={avatarUrl} />
+        </AvatarWrapper>
+        <CandidateInfo>
+          <CandidateName>
+            {firstName} {lastName}
+          </CandidateName>
+          <CandidatePosition>{position}</CandidatePosition>
+          <CandidateExperience>
+            {experience} years of experience
+          </CandidateExperience>
+          <CandidateLocation>Located in {location}</CandidateLocation>
+        </CandidateInfo>
+        <StatusBlock>{status}</StatusBlock>
+      </CandidateMainInfo>
+
+      <CandidateActions>
+        <ExpandedInfo
+          type="button"
+          aria-label={`View details of ${firstName} ${lastName}`}
+          onClick={() => setIsOpenInfo(true)}
+        >
+          <ViewDetailsIcon aria-hidden="true">⌄</ViewDetailsIcon>
+          View details
+        </ExpandedInfo>
+
+        <CandidateDetailModal
+          candidate={candidate}
+          isOpen={isOpenInfo}
+          setIsOpen={setIsOpenInfo}
+        />
+
+        <ApproveButton
+          type="button"
+          aria-label={`Approve ${firstName} ${lastName}`}
+          onClick={() => onStatusChange(candidate.id, 'Approved')}
+        >
+          Approve
+        </ApproveButton>
+        <RejectButton
+          type="button"
+          aria-label={`Reject ${firstName} ${lastName}`}
+          onClick={() => onStatusChange(candidate.id, 'Rejected')}
+        >
+          Reject
+        </RejectButton>
+      </CandidateActions>
     </CandidateCardContainer>
   );
 };

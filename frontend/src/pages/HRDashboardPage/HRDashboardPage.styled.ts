@@ -31,8 +31,8 @@ export const Title = styled.h1`
   margin-bottom: 1rem;
 `;
 
-export const DashboardContent = styled.div`
-  margin: 0 40px 0 300px;
+export const DashboardContent = styled.section`
+  /* margin: 0 40px 0 300px; */
   padding: 10px;
 `;
 
