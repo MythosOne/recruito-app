@@ -1,4 +1,4 @@
-import{q as r,w as b,t as f,v as l,j as o,r as x,V as g}from"./index-YduqHnoY.js";import{T as y,S as V,n as C,b as j}from"./CandidateProfilePage.styled-DnE3WlEM.js";const T=r.form`
+import{q as r,w as b,t as f,v as l,j as o,r as x,V as g}from"./index-B452NvnE.js";import{T as y,S as V,n as C,b as j}from"./CandidateProfilePage.styled-Co0Q8HdU.js";const T=r.form`
   display: flex;
   flex-direction: column;
   gap: 20px;
