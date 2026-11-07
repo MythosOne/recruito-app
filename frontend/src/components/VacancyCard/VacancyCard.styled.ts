@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { theme } from '@/theme/theme';
 
-const { breakpoints, shadows } = theme;
+const { breakpoints, shadows: {hoverShadow} } = theme;
 
 export const Card = styled.article<{ variant?: 'main' | 'profile' }>`
   display: flex;
@@ -20,16 +20,24 @@ export const Card = styled.article<{ variant?: 'main' | 'profile' }>`
   border: 1px solid #a2a2a2;
   border-radius: 16px;
 
-  transition:
+  /* transition:
     transform 250ms,
     border 250ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 
-  &:hover,
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* &:hover,
   &:focus-visible {
     ${({ variant }) => variant === 'main' && 'transform: scale(1.02);'}
     border: 2px solid #f5cc66;
-    box-shadow: ${shadows.hoverShadow};
+    box-shadow: ${hoverShadow};
+  } */
+
+    &:hover,
+  &:focus-visible {
+    border: 1px solid #f5cc66;
+    box-shadow: ${hoverShadow};
   }
 
   /* @media screen and (${breakpoints.tablet}) {

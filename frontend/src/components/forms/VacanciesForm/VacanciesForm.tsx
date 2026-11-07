@@ -7,7 +7,7 @@ import {
   HeadForm,
   TextFieldStyled,
 } from './VacanciesForm.styled';
-import { SubmitButton } from '../ui/Button/SubmitButton';
+import { SubmitButton } from '../../ui/Button/ActionButton';
 import type { Vacancy } from '@/types/Vacancy';
 
 // type CreateVacancyData = {

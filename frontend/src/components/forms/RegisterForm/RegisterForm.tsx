@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { Input } from '@/components/forms/ui/Input/Input';
+import { Input } from '@/components/ui/Input/Input';
 import * as Yup from 'yup';
 
 import { RegisterFormContainer, HeadForm, SubmitButton } from './RegisterForm.styled';

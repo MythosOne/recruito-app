@@ -1,15 +1,15 @@
 import type React from 'react';
-import { Button } from './SubmitButton.styled';
+import { Button } from './ActionButton.styled';
 
-interface SubmitButtonProps {
+interface ActionButtonProps {
   type: 'button' | 'submit';
-  variant?: 'signUp' | 'login' | 'register' | 'submit';
+  variant?: 'signIn' | 'signUp' | 'login' | 'register' | 'submit' | 'logout';
   onClick?: () => void;
   disabled?: boolean;
   children: React.ReactNode;
 }
 
-export const SubmitButton: React.FC<SubmitButtonProps> = ({
+export const ActionButton: React.FC<ActionButtonProps> = ({
   type,
   variant,
   onClick,

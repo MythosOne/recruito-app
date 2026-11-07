@@ -17,8 +17,7 @@ export const CandidateCardContainer = styled.li`
   min-width: 625px;
   min-height: 145px;
 
-  transition:
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus-visible {

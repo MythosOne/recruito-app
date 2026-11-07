@@ -5,7 +5,7 @@ import type { User } from '@/types/User';
 import { UserInfoForm } from './UserInfoForm/UserInfoForm';
 import { PostRadioGroup } from './PostRadioGroup/PostRadioGroup';
 import { PhotoUpload } from './PhotoUpload/PhotoUpload';
-import { SubmitButton } from '@/components/forms/ui/Button/SubmitButton';
+import { SubmitButton } from '@/components/ui/Button/ActionButton';
 
 import { FormContainer } from './EditProfileForm.styled';
 

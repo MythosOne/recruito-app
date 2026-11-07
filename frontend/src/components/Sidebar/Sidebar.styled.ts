@@ -59,9 +59,7 @@ export const ButtonLogout = styled.button`
   background-color: ${primary};
 
   transition:
-    transform 250ms,
-    background-color 250ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    var(--animation-button);
 
   &:hover,
   &:focus-visible {

@@ -4,12 +4,13 @@ import { theme } from '@/theme/theme';
 const { shadows } = theme;
 
 type ButtonProps = {
-  variant?: 'signUp' | 'login' | 'register'| 'submit';
+  variant?: 'signIn' | 'signUp' | 'login' | 'register' | 'submit' | 'logout';
   disabled?: boolean;
 };
 
 export const Button = styled.button<ButtonProps>`
-  width: ${({variant}) => variant === 'signUp' ? '150px' : '100px'};
+  /* width: ${({ variant }) => (variant === 'signUp' ? '150px' : '100px')}; */
+  width: 100px;
   height: 34px;
   border-radius: 80px;
   border: none;
@@ -18,10 +19,7 @@ export const Button = styled.button<ButtonProps>`
 
   cursor: pointer;
 
-  transition:
-    transform 250ms,
-    background-color 250ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--animation-button);
 
   &:hover,
   &:focus-visible {

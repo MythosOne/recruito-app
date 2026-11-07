@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import { theme } from '@/theme/theme';
 
-
 const { shadows } = theme;
 
-export const ModalOverlay = styled.div<{visible: boolean}>`
+export const ModalOverlay = styled.div<{ visible: boolean }>`
   position: fixed;
   inset: 0;
   z-index: 1001;
@@ -91,9 +90,7 @@ export const CloseButton = styled.button`
   cursor: pointer;
 
   transition:
-    transform 250ms,
-    background-color 250ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    var(--animation-button);
 
   &:hover,
   &:focus-visible {

@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Input } from '@/components/forms/ui/Input/Input';
+import { Input } from '@/components/ui/Input/Input';
 
 import { LoginFormContainer, HeadForm, SubmitButton } from './LoginForm.styled';
 

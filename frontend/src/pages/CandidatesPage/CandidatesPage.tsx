@@ -46,7 +46,7 @@ const CandidatesPage = () => {
 
   const handleStatusChange = (
     candidateId: string,
-    newStatus: 'approved' | 'rejected',
+    newStatus: 'Approved' | 'Rejected',
   ) => {
     setCandidates((prevCandidates) =>
       prevCandidates.map((candidate) =>
