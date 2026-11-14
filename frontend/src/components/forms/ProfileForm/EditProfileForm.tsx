@@ -5,7 +5,7 @@ import type { User } from '@/types/User';
 import { UserInfoForm } from './UserInfoForm/UserInfoForm';
 import { PostRadioGroup } from './PostRadioGroup/PostRadioGroup';
 import { PhotoUpload } from './PhotoUpload/PhotoUpload';
-import { SubmitButton } from '@/components/ui/Button/ActionButton';
+import { ActionButton } from '@/components/ui/Button/ActionButton';
 
 import { FormContainer } from './EditProfileForm.styled';
 
@@ -62,7 +62,7 @@ export const EditProfileForm/*: React.FC<UserFormProps>*/ = (/*{ onEdit }*/) => 
       <UserInfoForm onSubmitData={setUserInfo} resetForm={resetKey} />
       <PostRadioGroup onSubmitData={setPosition} resetForm={resetKey} />
       <PhotoUpload onSubmitData={setPhoto} resetForm={resetKey} />
-      <SubmitButton
+      <ActionButton
         variant="signUp"
         onClick={() => {
           onSubmit();
@@ -71,7 +71,7 @@ export const EditProfileForm/*: React.FC<UserFormProps>*/ = (/*{ onEdit }*/) => 
         disabled={isSubmitButton}
       >
         Sign Up
-      </SubmitButton>
+      </ActionButton>
     </FormContainer>
   );
 };

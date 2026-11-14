@@ -7,6 +7,6 @@ export const Section = styled.footer`
   align-items: center;
 
   height: 60px;
-  padding: 0 20px;
+  padding: 0 10px;
 `;
 export const Copyright = styled.span``;

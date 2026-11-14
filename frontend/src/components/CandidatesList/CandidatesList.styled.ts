@@ -4,11 +4,11 @@ export const CandidatesListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 68vh;
-  padding: 20px;
+  /* height: 68vh; */
+  /* padding: 20px; */
   background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid #ccc; */
+  /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
 `;
 
 export const CandidatesListCard = styled.ul`

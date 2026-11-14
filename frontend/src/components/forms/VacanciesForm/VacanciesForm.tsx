@@ -7,7 +7,7 @@ import {
   HeadForm,
   TextFieldStyled,
 } from './VacanciesForm.styled';
-import { SubmitButton } from '../../ui/Button/ActionButton';
+import { ActionButton } from '../../ui/Button/ActionButton';
 import type { Vacancy } from '@/types/Vacancy';
 
 // type CreateVacancyData = {
@@ -138,13 +138,13 @@ export const VacanciesForm = ({
         error={formik.touched.tags && Boolean(formik.errors.tags)}
         helperText={formik.touched.tags && formik.errors.tags}
       />
-      <SubmitButton
+      <ActionButton
         type="submit"
         variant="submit"
         disabled={!formik.isValid || !formik.dirty}
       >
         CReate Vacancy
-      </SubmitButton>
+      </ActionButton>
     </VacanciesFormContainer>
   );
 };

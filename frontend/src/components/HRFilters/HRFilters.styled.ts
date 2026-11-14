@@ -9,8 +9,9 @@ export const HRFiltersContainer = styled.div`
   width: 100%;
   /* height: 100px; */
   background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid #ccc; */
+  /* border-radius: 8px; */
+  /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
 `;
 
 export const HRFiltersTitle = styled.h2`
@@ -21,8 +22,9 @@ export const HRFiltersTitle = styled.h2`
 
 export const FilterBlock = styled.div`
   display: flex;
-  align-items: flex-end;
-  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 `;
 
 export const SearchField = styled.label`
@@ -33,7 +35,7 @@ export const SearchField = styled.label`
 
 export const SearchInput = styled.input`
   box-sizing: border-box;
-  width: 200px;
+  width: 280px;
   height: 30px;
   border-radius: 8px;
   border: 1px solid var(--border-color);
@@ -57,7 +59,7 @@ export const FilterFieldPosition = styled.label`
 
 export const PositionSelect = styled.select`
   box-sizing: border-box;
-  width: 200px;
+  width: 280px;
   height: 30px;
   border-radius: 8px;
   border: 1px solid var(--border-color);
@@ -81,7 +83,7 @@ export const FilterFieldStatus = styled.label`
 
 export const StatusSelect = styled.select`
   box-sizing: border-box;
-  width: 200px;
+  width: 280px;
   height: 30px;
   border-radius: 8px;
   border: 1px solid var(--border-color);
@@ -103,7 +105,7 @@ export const ResetFilterButton = styled.button`
   border-radius: 80px;
   border: none;
   background-color: #f4e041;
-  margin: 10px auto 0;
+  margin: 10px auto;
 
   cursor: pointer;
 

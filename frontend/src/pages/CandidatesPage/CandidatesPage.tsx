@@ -9,7 +9,7 @@ import { PaginationControls } from '@/components/PaginationControls/PaginationCo
 
 import { CandidatesPageContainer } from './CandidatesPage.styled';
 
-const ITEMS_PER_PAGE = 7;
+const ITEMS_PER_PAGE = 4;
 
 const CandidatesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);

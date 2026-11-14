@@ -4,18 +4,28 @@ import { theme } from '@/theme/theme';
 const {
   colors,
   shadows: { hoverShadow },
+  breakpoints: { mobile, tablet, desktop },
 } = theme;
 
 export const CandidateCardContainer = styled.li`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 16px;
+  padding: 6px;
   /* margin: 16px; */
-  min-width: 625px;
-  min-height: 145px;
+  width: 340px;
+  height: 200px;
+
+  @media (min-width: ${tablet}) {
+    min-width: 520px;
+  }
+
+  @media (min-width: ${desktop}) {
+    min-width: 600px;
+  }
 
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -53,6 +63,7 @@ export const CandidateInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
+  line-height: 1.4;
   /* margin-top: 8px; */
 `;
 
